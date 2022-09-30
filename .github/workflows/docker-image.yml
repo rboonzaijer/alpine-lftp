@@ -1,9 +1,12 @@
 name: Build and Publish Docker Container
 
 on:
+  schedule:
+    - cron: '30 6 * * 6'
   push:
     tags:
       - '**'
+  workflow_dispatch:
 
 jobs:
   push_to_registry:
